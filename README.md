@@ -1,2 +1,2 @@
 # ClaudeAgents
-Leveraging the 'projects' feature for pentesting and bughunting
+Leveraging the Claude's 'projects' feature for pentesting and bughunting
