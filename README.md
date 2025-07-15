@@ -15,9 +15,8 @@ Integration with Serper MCP server https://smithery.ai/server/@marcopesani/mcp-s
   1.	In your Claude project, create a project.
 	
   2.	Upload and paste the following files into the folder:
- 	  - project_instruction
-	  - google_dorking_report_template_en.html
-	  - google_dorks_info_disclosure_en.txt
+
+`project_instruction`, `google_dorking_report_template_en.html`, `google_dorks_info_disclosure_en.txt`
 	
   3.	When prompted, enter the target domain (e.g., example.com) for Google Dorking.
 	
