@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Dorking Vulnerability Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .title {
+            font-size: 28px;
+            font-weight: 300;
+            color: #2c2c2c;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 14px;
+            color: #666;
+            font-weight: 400;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #2c2c2c;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        
+        .field {
+            margin-bottom: 20px;
+        }
+        
+        .field-label {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .field-content {
+            background: #f8f8f8;
+            border: 1px solid #e0e0e0;
+            padding: 12px;
+            font-size: 14px;
+            color: #333;
+            min-height: 40px;
+        }
+        
+        .field-content.large {
+            min-height: 100px;
+        }
+        
+        .content-text {
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .content-text p {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .code {
+            font-family: 'Courier New', monospace;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 12px;
+            font-size: 13px;
+            color: #444;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        
+        .severity {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            font-size: 12px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">Information Disclosure Vulnerability Report</div>
+            <div class="subtitle">Google Dorking-based Information Disclosure Vulnerability Report</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Basic Information</div>
+            <div class="content-text">
+                <p><strong>Target Domain:</strong> example.com</p>
+                <p><strong>Discovery Date:</strong> 2025-07-15 14:30:00</p>
+                <p><strong>Severity:</strong> Medium</p>
+                <p><strong>Vulnerability Type:</strong> Information Disclosure</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Google Dork Used</div>
+            <div class="field">
+                <div class="field-label">Search Query</div>
+                <div class="code">site:example.com (filetype:env | filetype:config | filetype:sql | filetype:log | filetype:json | filetype:yml | filetype:csv) ("password" | "secret" | "api_key" | "database" | "backup")</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Vulnerability Details</div>
+            <div class="field">
+                <div class="field-label">Exposed URL</div>
+                <div class="field-content">https://example.com/backup/config.env</div>
+            </div>
+            <div class="field">
+                <div class="field-label">Exposed Information</div>
+                <div class="field-content large">Sensitive configuration files including database connection information, API keys, and administrator account details are exposed and accessible from external sources</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Impact and Risk Assessment</div>
+            <div class="content-text">
+                <p>• Potential unauthorized database access</p>
+                <p>• API key theft leading to service abuse</p>
+                <p>• Internal system information exposure</p>
+                <p>• Foundation for additional attacks</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Recommended Remediation</div>
+            <div class="content-text">
+                <p>1. Immediately delete or restrict access to exposed files</p>
+                <p>2. Change all exposed account credentials and API keys immediately</p>
+                <p>3. Disable web server directory listing functionality</p>
+                <p>4. Block access to sensitive files through .htaccess or server configuration</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Verification Method</div>
+            <div class="content-text">
+                <p>1. Enter the Google Dork query in Google search</p>
+                <p>2. Check exposed files for the target domain in search results</p>
+                <p>3. Verify file contents by directly accessing the URL</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            This report has been prepared for security improvement purposes.
+        </div>
+    </div>
+</body>
+</html>
