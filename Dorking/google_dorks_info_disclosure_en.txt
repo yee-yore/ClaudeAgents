@@ -1,0 +1,15 @@
+site:target.com (filetype:env | filetype:config | filetype:sql | filetype:log | filetype:json | filetype:yml | filetype:csv) ("password" | "secret" | "api_key" | "database" | "backup" | "DB_PASSWORD" | "API_KEY" | "aws_access_key_id" | "INSERT INTO" | "email")
+
+intitle:"index of" ("backup" | "config.php" | "database" | "private" | "/.git" | "node_modules" | ".env" | "src" | "log" | "admin" | "test")
+
+site:target.com (intitle:"phpinfo()" | intitle:"Apache Status" | intitle:"Server Status" | "swagger" | "api/docs" | "openapi" | "graphql")
+
+site:target.com ("error" | "Warning:" | "Fatal error:" | "Exception") ("mysql" | "database" | "php" | "sql" | "oracle" | "postgres")
+
+site:target.com (filetype:pdf | filetype:xls | filetype:xlsx | filetype:doc | filetype:docx | filetype:ppt | filetype:pptx) ("Do not distribute" | "Confidential" | "Secret" | "Internal use only" | "Not for external distribution" | "Internal" | "Employees only")
+
+site:target.com (inurl:admin | inurl:login | inurl:dashboard | inurl:portal | inurl:manager | inurl:console | inurl:panel | inurl:control) (intext:"login" | intext:"password" | intext:"admin" | intext:"username")
+
+site:target.com (filetype:txt | filetype:log | filetype:bak | filetype:backup | filetype:old | filetype:orig | filetype:tmp) ("password" | "username" | "user" | "admin" | "root" | "database" | "connection")
+
+site:target.com ("camera" | "webcam" | "video" | "stream") (inurl:view | inurl:live | inurl:cam | inurl:video | intext:"Network Camera" | intext:"IP Camera")
