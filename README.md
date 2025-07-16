@@ -55,3 +55,5 @@ Integration with Burp Suite MCP server https://github.com/PortSwigger/mcp-server
 
   2. Vulnerability verification using Burp Suite MCP or Crawling MCP (prototype pollution, DOM-based XSS, etc)
 
+  3. Integrating Trufflehog https://github.com/trufflesecurity/trufflehog
+
