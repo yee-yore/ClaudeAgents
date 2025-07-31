@@ -57,35 +57,6 @@ Integration with Burp Suite MCP server https://github.com/PortSwigger/mcp-server
 
   3. Integrating Trufflehog https://github.com/trufflesecurity/trufflehog
 
-## 2. Javascript Analysis
-**Summary**
-
-This project automates Javascript Analysis using the Burp Suite MCP server. It enables efficient javascript analysis (a.k.a. JS recon).
-
-**Requirements**
-
-Integration with Burp Suite MCP server https://github.com/PortSwigger/mcp-server
-
-**Basic Usage**
-
-  1.	In your Claude project, create a project.
-	
-  2.	Upload and paste the following files into the folder:
-
-`project_instruction`, `js_analysis_report_template_en.html`
-	
-  3.	When prompted, enter the target domain(e.g., example.com) or HTTP request traffic.
-	
-  4.	Your claude will perform automated Javascript Analysis and generate a structured report.
-
-**Future Extensions**
-
-  1. Customizing `project_instruction` (add what you wanna find in js files) 
-
-  2. Vulnerability verification using Burp Suite MCP or Crawling MCP (prototype pollution, DOM-based XSS, etc)
-
-  3. Integrating Trufflehog https://github.com/trufflesecurity/trufflehog
-
 ## 3. Daily Reporter
 **Summary**
 
